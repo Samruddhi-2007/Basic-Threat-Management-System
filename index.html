@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Threat Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-shield-alt"></i> Digital Threat Tracker</h1>
+
+    <div id="summary">
+      <h2>📊 Threat Summary</h2>
+      <p id="totalCount">Total Threats: 0</p>
+      <p id="maxSeverity">Highest Severity: N/A</p>
+    </div>
+
+    <form id="threatForm">
+      <input type="number" placeholder="Threat ID" id="id" required />
+      <input type="text" placeholder="Source (Firewall/Student/Antivirus)" id="source" required />
+      <input type="text" placeholder="Type (Malware/Phishing/DDoS)" id="type" required />
+      <input type="number" placeholder="Severity (1-10)" id="severity" required />
+      <input type="date" id="date" required />
+      <input type="time" id="time" required />
+      <button type="submit">Report Threat</button>
+    </form>
+
+    <div class="controls">
+      <input type="number" id="searchID" placeholder="Search by ID" />
+      <button onclick="searchByID()">Search</button>
+      <button onclick="showAll()">Show All</button>
+      <button onclick="showMaxSeverity()">Highest Severity</button>
+      <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
